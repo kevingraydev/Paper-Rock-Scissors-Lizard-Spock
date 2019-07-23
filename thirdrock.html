@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Paper, Rock, Scissors, Lizard, Spock</title>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <h1>Paper, Rock, Scissors,Lizard, Spock</h1>
+
+    <form id="responses" action="index.html" method="post">
+      <div class="">
+
+          <legend>Pick Your Choice</legend>
+
+          <input type="radio" class ="positve" name="answer" value="Paper">
+          <label for="Paper">Paper</label>
+
+          <input type="radio" class ="positve" name="answer" value="Rock">
+          <label for="Rock">Rock</label>
+
+          <input type="radio" class ="positve" name="answer" value="Scissors">
+          <label for="Scissors">Scissors</label>
+
+          <input type="radio" class ="positve" name="answer" value="Lizard">
+          <label for="Lizard">Lizard</label>
+
+          <input type="radio" class ="positve" name="answer" value="Spock">
+          <label for="Spock">Spock</label>
+
+      </div>
+      <button type="button" name="button">Play</button>
+    </form>
+
+    <script>
+      document.querySelector('button').addEventListener('click', (e)=>{
+        let playerChoice = document.querySelector('answer').value
+        console.log(playerChoice)
+        let outcome = winFunction()
+        winFunction(playerChoice)
+      });
+
+      function winFunction(playerInput){
+        let playerOne = playerInput;
+        let computer = getToken();
+        if(playerOne == "Scissors" && computer == "Paper"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Paper" && computer == "Rock"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Rock" && computer == "Lizard"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Lizard" && computer == "Spock"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Spock" && computer == "Scissors"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Scissors" && computer == "Lizard"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Lizard" && computer == "Paper"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Paper" && computer == "Spock"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Spock" && computer == "Rock"){
+          console.log("Player One Wins")
+        }else if(playerOne == "Rock" && computer == "Scissors"){
+          console.log("Player One Wins")
+        }else{
+          console.log("Player Two Wins")
+        }
+
+      function getToken(){
+        let x = Math.floor(Math.random()*5)
+        console.log(x)
+        let token = [null, 'Paper', 'Rock', 'Scissors', 'Lizard', 'Spock']
+          console.log(token[x])
+        }
+    </script>
+  </body>
+</html>
